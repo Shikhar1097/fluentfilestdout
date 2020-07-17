@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  fluentd:
+    build: ./fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+      - ./files:/temp
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
